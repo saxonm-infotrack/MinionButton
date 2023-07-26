@@ -1,5 +1,7 @@
 const buttonElement = document.getElementById('Minion-Button');
-let minionButton = document.getElementsByClassName("Minion-img")
+let minionButton = document.getElementsByClassName("Minion-img");
+
+minionButton.src = getRandomMinion();
 
 const toggleImgElement = (minionImg) => {
     if (minionImg.style.display === 'none') {
@@ -17,7 +19,8 @@ getRandomMinion = () => {
     const randomNumber = Math.floor(Math.random() * minions.length);
     return minions[randomNumber];
 }
-Image.src = minions
+
+
 buttonElement.addEventListener('click', () => {
-    toggleImgElement(minionButton.src = getRandomMinion());
+    toggleImgElement(minionButton.src);
 })
