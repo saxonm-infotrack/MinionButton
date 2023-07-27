@@ -2,6 +2,7 @@ const buttonElement = document.getElementById('Minion-Button');
 const minionImg = document.getElementById("Minion-img");
 
 
+
 const toggleImgElement = (minionImgToToggle) => {
     if (minionImgToToggle.style.display === 'none') {
         minionImgToToggle.style.display = 'block';
@@ -14,7 +15,10 @@ const toggleImgElement = (minionImgToToggle) => {
 const createMinionImg = () => {
     const newMinionImg = document.createElement("img");
     newMinionImg.setAttribute('height', '100px');
-    newMinionImg.setAttribute('width', '175px');
+    newMinionImg.setAttribute('width', '100px');
+    newMinionImg.style.position = 'absolute';
+    newMinionImg.style.left = mousePos.x;
+    newMinionImg.style.top = mousePos.y;
     newMinionImg.src = getRandomMinion();
     document.getElementById("div").appendChild(newMinionImg)
 }
@@ -29,8 +33,14 @@ getRandomMinion = () => {
     return minionURL[randomNumber];
 }
 
+const mousePosText = document.getElementById('mouse-pos');
+let mousePos = { x: undefined, y: undefined };
 
+window.addEventListener('mousemove', (event) => {
+  mousePos = { x: event.clientX, y: event.clientY };
+  mousePosText.textContent = `(${mousePos.x}, ${mousePos.y})`;
+});
 
-buttonElement.addEventListener('click', () => {
+document.addEventListener('click', () => {
         createMinionImg();
 }) 
