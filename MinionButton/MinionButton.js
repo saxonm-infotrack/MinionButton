@@ -14,7 +14,7 @@ const toggleImgElement = (minionImgToToggle) => {
 const createMinionImg = () => {
     const newMinionImg = document.createElement("img");
     newMinionImg.setAttribute('height', '100px');
-    newMinionImg.setAttribute('width', '100px');
+    newMinionImg.setAttribute('width', '175px');
     newMinionImg.src = getRandomMinion();
     document.getElementById("div").appendChild(newMinionImg)
 }
