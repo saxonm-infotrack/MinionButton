@@ -29,15 +29,8 @@ getRandomMinion = () => {
     return minionURL[randomNumber];
 }
 
-let clickTracker = 0;
+
 
 buttonElement.addEventListener('click', () => {
-      if (clickTracker <= 5) {
-        clickTracker++;
         createMinionImg();
-      } else {
-        for (i = 0; i = 2; i++) {
-            i = 0;
-        }
-      }
 }) 
